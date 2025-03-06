@@ -1,53 +1,76 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.173.0/build/three.module.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import * as THREE from 'three';
 
-// 1. Create the scene
 const scene = new THREE.Scene();
-scene.background = new THREE.Color('#F0F0F0');
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-// 2. Create the Camera
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const amblight = new THREE.AmbientLight( 0x404040, 10 ); // soft white light
+scene.add( amblight );
+
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize( window.innerWidth, window.innerHeight );
+renderer.setAnimationLoop( animate );
+document.body.appendChild( renderer.domElement );
+
+const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+const cube = new THREE.Mesh( geometry, material );
+scene.add( cube );
+
 camera.position.z = 5;
 
-// 3. Create the Cube
-const geometry = new THREE.SphereGeometry(1, 32, 32); // Радиус 1, 32 сегмента по ширине и высоте
-const geometry2 = new THREE.BoxGeometry();
+const loader = new GLTFLoader();
 
-const material = new THREE.MeshStandardMaterial({ color: '#468585', emissive: '#468585' });
-const material2 = new THREE.MeshStandardMaterial({ color: '#00FF00', emissive: '#468585' });
+// Load a glTF resource
+loader.load(
+    // resource URL
+    'models/zabka/scene.gltf',
+    // called when the resource is loaded
+    function ( gltf ) {
 
-const sphere = new THREE.Mesh(geometry, material);
-const cube = new THREE.Mesh(geometry2, material2);
-cube.position.x = 2; // Смещаем вправо
+        gltf.scene.scale.set(10, 10, 10);
+        scene.add( gltf.scene );
+    },
+    // called while loading is progressing
+    function ( xhr ) {
 
-scene.add(cube);
-scene.add(sphere);
+        console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+    },
+    // called when loading has errors
+    function ( error ) {
 
-// 4. Create the Lights
+        console.log( 'An error happened' );
 
-const light = new THREE.DirectionalLight(0x9CDBA6, 1.5);
-light.position.set(1, 1, 1);
-scene.add(light);
+    }
+);
 
+loader.load(
+    // resource URL
+    'models/kfc/scene.gltf',
+    // called when the resource is loaded
+    function ( gltf ) {
 
-// 5. Create the Renderer
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+        gltf.scene.scale.set(10, 10, 10);
+        scene.add( gltf.scene );
+    },
+    // called while loading is progressing
+    function ( xhr ) {
 
-// 6.Animation
+        console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+    },
+    // called when loading has errors
+    function ( error ) {
+
+        console.log( 'An error happened' );
+
+    }
+);
+
+const orbitControls = new OrbitControls(camera, renderer.domElement);
+
 function animate() {
-    requestAnimationFrame(animate);
 
-    sphere.rotation.x += 0.01;
-    sphere.rotation.y += 0.01;
+    renderer.render( scene, camera );
 
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-
-    renderer.render(scene, camera);
 }
-animate();
-
-
-
-

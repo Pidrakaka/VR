@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c6d20bf-9ba0-42d4-987a-17956292a5bd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/models/kfc/scene.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/kfc/scene.gltf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/zabka/scene.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/zabka/scene.gltf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/zabka/textures/frog_mat_baseColor.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDfejkl.glb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/basic/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/basic/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,18 +23,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Pidrakaka"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Pidrakaka&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Pidrakaka/Pidrakaka.github.io.git",
-    "accountId": "8d83098e-c5d1-4a3f-bdd3-314c28b0e3d9"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Pidrakaka/Pidrakaka.github.io.git&quot;,
+    &quot;accountId&quot;: &quot;8d83098e-c5d1-4a3f-bdd3-314c28b0e3d9&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -34,7 +42,9 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2tm5AC7zjQHBVTcEjDCwFVrnhXe" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -42,10 +52,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Node.js.main.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Nursat/WebstormProjects/tthree/models/zabka",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -55,6 +67,16 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Nursat\WebstormProjects\tthree\models" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Nursat\WebstormProjects\tthree\assets" />
+      <recent name="C:\Users\Nursat\WebstormProjects\tthree\assests" />
+      <recent name="C:\Users\Nursat\WebstormProjects\tthree" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -74,7 +96,11 @@
       <workItem from="1741026593660" duration="1903000" />
       <workItem from="1741028702015" duration="255000" />
       <workItem from="1741111275935" duration="1490000" />
-      <workItem from="1741112836771" duration="1526000" />
+      <workItem from="1741112836771" duration="1587000" />
+      <workItem from="1741250153513" duration="4713000" />
+      <workItem from="1741256933178" duration="1278000" />
+      <workItem from="1741258263344" duration="71000" />
+      <workItem from="1741260014587" duration="339000" />
     </task>
     <servers />
   </component>
