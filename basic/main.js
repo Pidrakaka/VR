@@ -1,5 +1,6 @@
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { VRButton } from 'three/addons/webxr/VRButton.js';
 import * as THREE from 'three';
 
 const scene = new THREE.Scene();
@@ -8,10 +9,22 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 const amblight = new THREE.AmbientLight( 0x404040, 10 ); // soft white light
 scene.add( amblight );
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
-renderer.setAnimationLoop( animate );
-document.body.appendChild( renderer.domElement );
+//--------
+//const renderer = new THREE.WebGLRenderer();
+//renderer.setSize( window.innerWidth, window.innerHeight );
+//renderer.setAnimationLoop( animate );
+//document.body.appendChild( renderer.domElement );
+//--------
+
+// Создаём рендерер с поддержкой WebXR (VR)
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.xr.enabled = true; // Включаем поддержку VR
+document.body.appendChild(renderer.domElement);
+
+// Добавляем VR-кнопку
+document.body.appendChild(VRButton.createButton(renderer));
+
 
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
@@ -69,8 +82,14 @@ loader.load(
 
 const orbitControls = new OrbitControls(camera, renderer.domElement);
 
-function animate() {
+//function animate() {
 
-    renderer.render( scene, camera );
+    //renderer.render( scene, camera );
 
-}
+//}
+
+// Главный рендер-цикл (для VR и обычного режима)
+renderer.setAnimationLoop(() => {
+    orbitControls.update(); // Обновляем управление камерой
+    renderer.render(scene, camera);
+});
