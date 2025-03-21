@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c6d20bf-9ba0-42d4-987a-17956292a5bd" name="Changes" comment="" />
+    <list default="true" id="3c6d20bf-9ba0-42d4-987a-17956292a5bd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/audio/sigma.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Girl/ene.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Girl/scene.gltf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/room/scene.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/room/scene.gltf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basic/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/basic/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,9 +74,11 @@
       <recent name="C:\Users\Nursat\WebstormProjects\tthree\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Nursat\WebstormProjects\tthree\audio" />
+      <recent name="C:\Users\Nursat\WebstormProjects\tthree\models\Girl" />
+      <recent name="C:\Users\Nursat\WebstormProjects\tthree\models\room" />
       <recent name="C:\Users\Nursat\WebstormProjects\tthree\assets" />
       <recent name="C:\Users\Nursat\WebstormProjects\tthree\assests" />
-      <recent name="C:\Users\Nursat\WebstormProjects\tthree" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -103,6 +114,9 @@
       <workItem from="1742046791712" duration="74000" />
       <workItem from="1742047374898" duration="100000" />
       <workItem from="1742552742627" duration="332000" />
+      <workItem from="1742554973018" duration="257000" />
+      <workItem from="1742568917199" duration="980000" />
+      <workItem from="1742576699931" duration="422000" />
     </task>
     <servers />
   </component>

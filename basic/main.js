@@ -4,6 +4,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { VRButton } from 'three/addons/webxr/VRButton.js';
 
+
 // === Создание сцены и камеры ===
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
@@ -30,11 +31,12 @@ const loader = new GLTFLoader();
 
 let zabka = null;
 let kfc = null;
+let room= null;
 
 // Загружаем модель "Жабка"
-loader.load('models/zabka/scene.gltf', (gltf) => {
+loader.load('models/Girl/scene.gltf', (gltf) => {
     zabka = gltf.scene;
-    zabka.scale.set(10, 10, 10);
+    zabka.scale.set(2, 2, 2);
     scene.add(zabka);
 });
 
@@ -45,10 +47,45 @@ loader.load('models/kfc/scene.gltf', (gltf) => {
     scene.add(kfc);
 });
 
+loader.load('models/room/scene.gltf', (gltf) => {
+    room = gltf.scene;
+    room.scale.set(2, 2, 2);
+    room.position.set(0, -2,0);
+    scene.add(room);
+});
 
 
 // === Добавляем таймер для анимации ===
 const clock = new THREE.Clock();
+
+// === Звук в сцене ===
+const listener = new THREE.AudioListener();
+camera.add(listener);
+
+const sound = new THREE.Audio(listener);
+const audioLoader = new THREE.AudioLoader();
+
+audioLoader.load('audio/music.mp3', (buffer) => {
+    sound.setBuffer(buffer);
+    sound.setLoop(true);
+    sound.setVolume(0.5);
+});
+
+// === Запуск музыки при первом касании (для мобильных устройств) ===
+const playAudio = () => {
+    if (!sound.isPlaying) {
+        sound.play();
+    }
+    // Удаляем обработчик после первого клика
+    document.removeEventListener('click', playAudio);
+    document.removeEventListener('touchstart', playAudio);
+};
+
+// Добавляем обработчики для клика и касания (для телефонов)
+document.addEventListener('click', playAudio);
+document.addEventListener('touchstart', playAudio);
+
+
 
 // === Основной рендер-цикл (для обычного режима и VR) ===
 renderer.setAnimationLoop(() => {
